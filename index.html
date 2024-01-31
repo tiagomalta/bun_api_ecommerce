@@ -52,6 +52,9 @@
             <li class="scroll-to-link" data-target="content-post-clientes">
                 <a>Incluir Clientes</a>
             </li>
+            <li class="scroll-to-link" data-target="content-post-produtos">
+                <a>Incluir Produtos</a>
+            </li>
         </ul>
     </div>
 </div>
@@ -377,6 +380,60 @@ Sem sucesso:
                     <td>codpais</td>
                     <td>String (max 5)</td>
                     <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+<div class="overflow-hidden content-section" id="content-post-produtos">
+            <h2>Incluir Produtos</h2>
+            <pre><code class="bash">
+# Exemplo curl
+curl \
+-X POST http://solicitarurl.com/rest/EcmProd \
+--header 'Content-Type: application/json' \
+--data '{   
+        "descricao":"PRODUTOS TESTE 1"
+    }'
+                </code></pre>
+            <pre><code class="json">
+Exemplo retorno:
+
+Com sucesso:
+
+{
+    "status": true,
+    "mensagem": "PRODUTOS TESTE 1",
+    "codigo": "PAN01518       ",
+    "descricao": "PRODUTOS TESTE 1"
+}
+
+
+Sem sucesso:
+
+
+{
+    "status": false,
+    "mensagem": "campos obrigatorios - descricao/",
+    "codigo": "",
+    "descricao": ""
+}
+
+
+                </code></pre>
+            <h4>BODY PARAMETERS</h4>
+            <table class="central-overflow-x">
+                <thead>
+                <tr>
+                    <th>Campo</th>
+                    <th>Tipo</th>
+                    <th>Descrição</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>descricao</td>
+                    <td>String (max 70)</td>
+                    <td>alfanumérico e não pode conter caracteres especiais</td>
                 </tr>
                 </tbody>
             </table>
