@@ -39,8 +39,8 @@
     <div class="mobile-menu-closer"></div>
     <div class="content-menu">
         <div class="content-infos">
-            <div class="info"><b>Versão:</b> 1.0.0</div>
-            <div class="info"><b>Ultima Atualização:</b> 25/01/2024</div>
+            <div class="info"><b>Versão:</b> 1.0.1</div>
+            <div class="info"><b>Ultima Atualização:</b> 12/03/2024</div>
         </div>
         <ul>
             <li class="scroll-to-link active" data-target="content-get-started">
@@ -391,11 +391,53 @@ Sem sucesso:
 curl \
 -X POST http://solicitarurl.com/rest/EcmProd \
 --header 'Content-Type: application/json' \
---data '{   
-        "descricao":"PRODUTOS TESTE 1"
-    }'
-                </code></pre>
-            <pre><code class="json">
+--data '{
+    "descricao":"PRODUTOS TESTE 1",
+    "tipo":"PA",
+    "um":"UN",
+    "xorig":"N",
+    "locpad":"01",
+    "grupo":"1211",
+    "segum":"",
+    "novo":"N",
+    "conv":0,
+    "tipconv":"",
+    "cc":"",
+    "origem":"0",
+    "codant":"",
+    "picm":2,
+    "posipi":"00000000",
+    "especie":"01",
+    "exncm":"",
+    "exnbm":"",
+    "ipi":0,
+    "aliqiss":0,
+    "picmret":0,
+    "picment":0,
+    "impzfrc":"",
+    "clasfis":"",
+    "grtrib":"",
+    "irrf":"",
+    "cest":"",
+    "desbse2":"1",
+    "base2":"1",
+    "conta":"110101001",
+    "contac":"110101001",
+    "itemcc":"109999",
+    "xestoq":"N",
+    "xusad1":"N",
+    "xintpcf":"1",
+    "peso":0,
+    "pesbru":0,
+    "cubagem":0,
+    "codbar":"1",
+    "verean":"1",
+    "vigenc":"01/12/25",
+    "codgtin":"XXX0"
+}'
+                
+</code></pre>
+<pre><code class="json">
 Exemplo retorno:
 
 Com sucesso:
@@ -434,6 +476,212 @@ Sem sucesso:
                     <td>descricao</td>
                     <td>String (max 70)</td>
                     <td>alfanumérico e não pode conter caracteres especiais</td>
+                </tr>
+                <tr>
+                    <td>tipo</td>
+                    <td>String (max 2)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>um</td>
+                    <td>String (max 2)</td>
+                    <td>Unidade</td>
+                </tr>
+                <tr>
+                    <td>xorig</td>
+                    <td>String (max 1)</td>
+                    <td>Origem Produto</td>
+                </tr>
+                <tr>
+                    <td>locpad</td>
+                    <td>String (max 2)</td>
+                    <td>Armazem Padrao</td>
+                </tr>
+                <tr>
+                    <td>grupo</td>
+                    <td>String (max 4)</td>
+                    <td>Grupo de Estoque</td>
+                </tr>
+                <tr>
+                    <td>segum</td>
+                    <td>String (max 2)</td>
+                    <td>Segunda Unidade de Medida</td>
+                </tr>
+                <tr>
+                    <td>novo</td>
+                    <td>String (max 1)</td>
+                    <td>Produto Inovacao</td>
+                </tr>
+                <tr>
+                    <td>conv</td>
+                    <td>Decimal (12,4)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>tipconv</td>
+                    <td>String (max 1)</td>
+                    <td>Tipo de Conversao da UM</td>
+                </tr>
+                <tr>
+                    <td>cc</td>
+                    <td>String (max 9)</td>
+                    <td>Centro Custo</td>
+                </tr>
+                <tr>
+                    <td>origem</td>
+                    <td>String (max 1)</td>
+                    <td>Origem do produto</td>
+                </tr>
+                <tr>
+                    <td>codant</td>
+                    <td>String (max 15)</td>
+                    <td>Codigo anterior</td>
+                </tr>
+                <tr>
+                    <td>picm</td>
+                    <td>Decimal (5,2)</td>
+                    <td>Alíquota de ICMS</td>
+                </tr>
+                <tr>
+                    <td>posipi</td>
+                    <td>String (max 10)</td>
+                    <td>Pos.IPI/NCM</td>
+                </tr>
+                <tr>
+                    <td>especie</td>
+                    <td>String (max 2)</td>
+                    <td>Especie Produto da TIPI</td>
+                </tr>
+                <tr>
+                    <td>exncm</td>
+                    <td>String (max 3)</td>
+                    <td>Ex-NCM</td>
+                </tr>
+                <tr>
+                    <td>exnbm</td>
+                    <td>String (max 3)</td>
+                    <td>Ex-NBM</td>
+                </tr>
+                <tr>
+                    <td>ipi</td>
+                    <td>Decimal(5,2)</td>
+                    <td>Aliquota de IPI</td>
+                </tr>
+                <tr>
+                    <td>aliqiss</td>
+                    <td>Decimal(5,2)</td>
+                    <td>Aliquota de ISS</td>
+                </tr>
+                <tr>
+                    <td>picmret</td>
+                    <td>Decimal(6,2)</td>
+                    <td>% Lucro Calc. Solid.Saida</td>
+                </tr>
+                <tr>
+                    <td>picment</td>
+                    <td>Decimal(6,2)</td>
+                    <td>% Lucro Calc. Solid.Entr.</td>
+                </tr>
+                <tr>
+                    <td>impzfrc</td>
+                    <td>String (max 1)</td>
+                    <td>Produto Import. Z.Franca</td>
+                </tr>
+                <tr>
+                    <td>clasfis</td>
+                    <td>String (max 2)</td>
+                    <td>Classificacao fiscal</td>
+                </tr>
+                <tr>
+                    <td>grtrib</td>
+                    <td>String (max 6)</td>
+                    <td>Grupo de Tributacao</td>
+                </tr>
+                <tr>
+                    <td>irrf</td>
+                    <td>String (max 1)</td>
+                    <td>Incide imposto renda</td>
+                </tr>
+                <tr>
+                    <td>cest</td>
+                    <td>String (max 7)</td>
+                    <td>Cod. Especificador ST</td>
+                </tr>
+                <tr>
+                    <td>desbse2</td>
+                    <td>String (max 60)</td>
+                    <td>Desc SubFamilia</td>
+                </tr>
+                <tr>
+                    <td>base2</td>
+                    <td>String (max 14)</td>
+                    <td>SubSubfamilia</td>
+                </tr>
+                <tr>
+                    <td>conta</td>
+                    <td>String (max 20)</td>
+                    <td>Conta Contabil do Produto</td>
+                </tr>
+                
+                <tr>
+                    <td>contac</td>
+                    <td>String (max 20)</td>
+                    <td>Conta Contabil de custo</td>
+                </tr>
+                <tr>
+                    <td>itemcc</td>
+                    <td>String (max 9)</td>
+                    <td>Item de Conta</td>
+                </tr>
+                <tr>
+                    <td>xestoq</td>
+                    <td>String (max 1)</td>
+                    <td>Controle Estoque</td>
+                </tr>
+                <tr>
+                    <td>xusad1</td>
+                    <td>String (max 1)</td>
+                    <td>Usa na NF Entrada</td>
+                </tr>
+                <tr>
+                    <td>xintpcf</td>
+                    <td>String (max 254)</td>
+                    <td>Integracao PCF</td>
+                </tr>
+                <tr>
+                    <td>peso</td>
+                    <td>Decimal(11,4)</td>
+                    <td>Peso Liquido</td>
+                </tr>
+                <tr>
+                    <td>pesbru</td>
+                    <td>Decimal(11,4)</td>
+                    <td>Peso Bruto  </td>
+                </tr>
+                <tr>
+                    <td>cubagem</td>
+                    <td>Decimal(12,8)</td>
+                    <td>Cubagem     </td>
+                </tr>
+                <tr>
+                    <td>codbar</td>
+                    <td>String (max 15)</td>
+                    <td>Codigo de Barras         </td>
+                </tr>
+                <tr>
+                    <td>verean</td>
+                    <td>String (max 2)</td>
+                    <td>Codigo EAN</td>
+                </tr>
+                <tr>
+                    <td>vigenc</td>
+                    <td>Data (max 8)</td>
+                    <td>Data Vigencia Inicial - Ex: 01/01/24</td>
+                </tr>
+                <tr>
+                    <td>codgtin</td>
+                    <td>String (max 15)</td>
+                    <td>Codigo GTIN</td>
                 </tr>
                 </tbody>
             </table>
