@@ -39,8 +39,8 @@
     <div class="mobile-menu-closer"></div>
     <div class="content-menu">
         <div class="content-infos">
-            <div class="info"><b>Versão:</b> 1.0.1</div>
-            <div class="info"><b>Ultima Atualização:</b> 12/03/2024</div>
+            <div class="info"><b>Versão:</b> 1.0.2</div>
+            <div class="info"><b>Ultima Atualização:</b> 25/03/2024</div>
         </div>
         <ul>
             <li class="scroll-to-link active" data-target="content-get-started">
@@ -433,7 +433,20 @@ curl \
     "codbar":"1",
     "verean":"1",
     "vigenc":"01/12/25",
-    "codgtin":"XXX0"
+    "codgtin":"XXX0",
+    "codiss":"",
+    "inss":"",
+    "redinss":0,
+    "redirrf":0,
+    "pis":"2",
+    "ppis":0,
+    "cofins":"2",
+    "pcofins":0,
+    "csll":"2",
+    "pcsll":0,
+    "cricms":"",
+    "tpserv":"",
+    "natren":""
 }'
                 
 </code></pre>
@@ -682,6 +695,71 @@ Sem sucesso:
                     <td>codgtin</td>
                     <td>String (max 15)</td>
                     <td>Codigo GTIN</td>
+                </tr>
+                <tr>
+                    <td>codiss</td>
+                    <td>String (max 9)</td>
+                    <td>Código de Serviço do ISS</td>
+                </tr>
+                <tr>
+                    <td>inss</td>
+                    <td>String (max 1)</td>
+                    <td>Calcula INSS</td>
+                </tr>
+                <tr>
+                    <td>redinss</td>
+                    <td>Decimal(5,2)</td>
+                    <td>Perc. de reducao do INSS</td>
+                </tr>
+                <tr>
+                    <td>redirrf</td>
+                    <td>Decimal(5,2)</td>
+                    <td>Perc. de reducao do IRRF</td>
+                </tr>
+                <tr>
+                    <td>pis</td>
+                    <td>String (max 1)</td>
+                    <td>Efetua a retencao PIS</td>
+                </tr>
+                <tr>
+                    <td>ppis</td>
+                    <td>Decimal(5,2)</td>
+                    <td>Percentual PIS</td>
+                </tr>
+                <tr>
+                    <td>cofins</td>
+                    <td>String (max 1)</td>
+                    <td>Efetua a retencao COFINS </td>
+                </tr>
+                <tr>
+                    <td>pcofins</td>
+                    <td>Decimal(5,2)</td>
+                    <td>Percentual COFINS</td>
+                </tr>
+                <tr>
+                    <td>csll</td>
+                    <td>String (max 1)</td>
+                    <td>Efetua a retencao CSLL</td>
+                </tr>
+                <tr>
+                    <td>pcsll</td>
+                    <td>Decimal(5,2)</td>
+                    <td>Percentual CSLL</td>
+                </tr>
+                <tr>
+                    <td>cricms</td>
+                    <td>String (max 1)</td>
+                    <td>Calcula Cred ICMS Art 271</td>
+                </tr>
+                <tr>
+                    <td>tpserv</td>
+                    <td>String (max 2)</td>
+                    <td>Classif tipo de servico</td>
+                </tr>
+                <tr>
+                    <td>natren</td>
+                    <td>String (max 5)</td>
+                    <td>Natureza de Rendimento</td>
                 </tr>
                 </tbody>
             </table>
