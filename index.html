@@ -39,8 +39,8 @@
     <div class="mobile-menu-closer"></div>
     <div class="content-menu">
         <div class="content-infos">
-            <div class="info"><b>Versão:</b> 1.0.2</div>
-            <div class="info"><b>Ultima Atualização:</b> 25/03/2024</div>
+            <div class="info"><b>Versão:</b> 1.0.3</div>
+            <div class="info"><b>Ultima Atualização:</b> 12/07/2024</div>
         </div>
         <ul>
             <li class="scroll-to-link active" data-target="content-get-started">
@@ -57,6 +57,12 @@
             </li>
             <li class="scroll-to-link" data-target="content-post-dtentrega">
                 <a>Integrar Data de Entrega</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-post-wms03">
+                <a>Integrar WMS03</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-post-wms32">
+                <a>Integrar WMS32</a>
             </li>
         </ul>
     </div>
@@ -832,6 +838,189 @@ Sem sucesso:
                     <td>dxEntrega</td>
                     <td>String (max 10)</td>
                     <td>Exemplo: 30/05/2024</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+<div class="overflow-hidden content-section" id="content-post-wms03">
+            <h2>Integrar WMS03</h2>
+            <pre><code class="bash">
+# Exemplo curl
+curl \
+-X POST http://solicitarurl.com/rest/APIWMS_Solistica/REPONSE/WMS03 
+--header 'Content-Type: application/json' 
+--data '
+{
+  "token": "E64T00900SAC7257",
+  "estabelecimento": "301",
+  "idnfe": "25240613809963000263550019000027181561171366",
+  "produtos": [
+    {
+      "produto": "ME000815",
+      "quantidade": "10"
+    }
+  ]
+}'
+                
+</code></pre>
+<pre><code class="json">
+Exemplo retorno:
+
+Com sucesso:
+
+{
+	"success":true,
+	"msg":"Conferencia gravada com sucesso."
+}
+
+Sem sucesso:
+
+
+{
+	"success":false,
+	"msg":"Nota Fiscal nao encontrada."
+}
+
+
+                </code></pre>
+            <h4>BODY PARAMETERS</h4>
+            <table class="central-overflow-x">
+                <thead>
+                <tr>
+                    <th>Campo</th>
+                    <th>Tipo</th>
+                    <th>Descrição</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>token</td>
+                    <td>String</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>estabelecimento</td>
+                    <td>String</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>idnfe</td>
+                    <td>String</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>produto</td>
+                    <td>String</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>quantidade</td>
+                    <td>String</td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+<div class="overflow-hidden content-section" id="content-post-wms32">
+            <h2>Integrar WMS32</h2>
+            <pre><code class="bash">
+# Exemplo curl
+curl \
+-X POST http://solicitarurl.com/rest/APIWMS_Solistica/REPONSE/WMS32 
+--header 'Content-Type: application/json' 
+--data '
+{
+  "token": "E64T00900SAC7257",
+  "estabelecimento": "301",
+  "idnfe": "25240613809963000263550019000027181561171366",
+  "produtos": [
+    {
+      "produto": "ME000815",
+      "quantidade": "100",
+      "quantidade_avaria": "2",
+      "quantidade_sobra": "1",
+      "quantidade_falta": "2"
+    },
+    {
+      "produto": "MRN00313",
+      "quantidade": "80",
+      "quantidade_avaria": ".664",
+      "quantidade_sobra": ".1673",
+      "quantidade_falta": ".1673"
+    }
+  ]
+}'
+                
+</code></pre>
+<pre><code class="json">
+Exemplo retorno:
+
+Com sucesso:
+
+{
+	"success":true,
+	"msg":"Conferencia gravada com sucesso."
+}
+
+Sem sucesso:
+
+
+{
+	"success":false,
+	"msg":"Nota Fiscal nao encontrada."
+}
+
+
+                </code></pre>
+            <h4>BODY PARAMETERS</h4>
+            <table class="central-overflow-x">
+                <thead>
+                <tr>
+                    <th>Campo</th>
+                    <th>Tipo</th>
+                    <th>Descrição</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>token</td>
+                    <td>String</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>estabelecimento</td>
+                    <td>String</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>idnfe</td>
+                    <td>String</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>produto</td>
+                    <td>String</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>quantidade</td>
+                    <td>String</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>quantidade_avaria</td>
+                    <td>String</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>quantidade_sobra</td>
+                    <td>String</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>quantidade_falta</td>
+                    <td>String</td>
+                    <td></td>
                 </tr>
                 </tbody>
             </table>
